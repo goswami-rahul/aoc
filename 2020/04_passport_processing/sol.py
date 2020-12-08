@@ -5,7 +5,7 @@ import collections
 from rich import traceback
 traceback.install()
 
-def Part1():
+def Easy():
   def Check(have: Set[str]):
     need = {'ecl', 'pid', 'eyr', 'hcl', 'byr', 'iyr', 'cid', 'hgt'}
     if have - need:
@@ -28,7 +28,7 @@ def Part1():
     have.clear()
   return ans
 
-def Part2():
+def Hard():
   def HeightOk(hgt: str):
     return ((hgt.endswith('in') and 59 <= int(hgt[:-2]) <= 76) or 
       (hgt.endswith('cm') and 150 <= int(hgt[:-2]) <= 193))
@@ -57,5 +57,5 @@ def Part2():
     have.clear()
   return ans
 
-print(Part1())
-print(Part2())
+print(Easy())
+print(Hard())
